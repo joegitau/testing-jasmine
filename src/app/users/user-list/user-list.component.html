@@ -1,0 +1,8 @@
+<p>All Users!</p>
+<br>
+<div *ngIf="users$ | async as users">
+  <ul *ngFor="let user of users">
+    <li>{{ user?.name }}</li>
+  </ul>
+</div>
+
