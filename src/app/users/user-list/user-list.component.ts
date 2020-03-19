@@ -3,8 +3,6 @@ import { Observable } from 'rxjs';
 
 import { User } from '../user.model';
 import { UserService } from '../user.service';
-
-
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -17,10 +15,11 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.users$ = this.userService.fetchUsers();
+
     this.users$.subscribe(
       users => console.log(users),
       error => console.log('Something went rogue', error)
-      )
+      );
   }
 
 }
