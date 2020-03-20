@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { VotesComponent } from './setup-teardown/votes/votes.component';
 import { LoginComponent } from './forms/login/login.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VotesComponent,
     LoginComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

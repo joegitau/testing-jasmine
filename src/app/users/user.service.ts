@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 import { User } from './user.model';
@@ -18,6 +18,12 @@ export class UserService {
       .pipe(
         catchError(this.handleErrors)
       );
+  }
+
+  fetchUser(id: number) {
+    return this.fetchUsers().pipe(
+      map(users => users.find(u => u.id === id))
+    )
   }
 
   handleErrors(err: HttpErrorResponse) {
